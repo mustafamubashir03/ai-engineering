@@ -10,5 +10,13 @@ dependencies = [
     "groq>=1.5.0",
     "ipykernel>=7.0.1",
     "openai>=2.5.0",
+    "pydantic>=2.13.4",
+    "pydantic-settings>=2.14.2",
     "python-dotenv>=1.2.2",
+    "streamlit>=1.58.0",
+]
+
+[dependency-groups]
+dev = [
+    "matplotlib>=3.11.0",
 ]

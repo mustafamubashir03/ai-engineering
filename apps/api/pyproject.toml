@@ -1,0 +1,36 @@
+[project]
+name = "api"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "Mustafa", email = "mustafamubashir87@gmail.com" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi>=0.119.0",
+    "google-genai>=2.10.0",
+    "groq>=1.5.0",
+    "openai>=2.5.0",
+    "pydantic>=2.13.4",
+    "pydantic-settings>=2.14.2",
+    "uvicorn>=0.38.0",
+]
+
+[build-system]
+requires = ["uv_build>=0.9.3,<0.10.0"]
+build-backend = "uv_build"
+
+[tool.uv.sources]
+shared = {workspace = true}
+
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/api"]
+
+[tool.hatch.build.targets.sdist]
+include = [
+    "src/",
+    "tests/",
+    "README.md",
+]
