@@ -1,4 +1,13 @@
 FROM ghcr.io/astral-sh/uv:python3.12-bookworm-slim
+
 WORKDIR /app
-# Copy workspace root files for dependency resolution
-COPY pyproject.toml uv.lock ./
+
+COPY pyproject.toml ./
+RUN uv sync --group dev --no-install-project
+
+COPY . .
+RUN uv sync --group dev
+
+EXPOSE 8888
+
+CMD ["sleep", "infinity"]
