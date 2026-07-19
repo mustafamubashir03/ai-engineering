@@ -31,7 +31,6 @@ services:
       - .env
     volumes:
       - .:/app
-      - app_venv:/app/.venv
     ports:
       - "8888:8888"
     stdin_open: true
